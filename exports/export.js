@@ -4,5 +4,6 @@
 function sub(a,b) {
     return a-b;
 }
-const x="Keshav";
-module.exports ={add,x,sub};
+const name="Keshav";
+const address="Mdb";
+module.exports ={add,name,sub,address};
