@@ -1,0 +1,25 @@
+{
+  "name": "npmmod",
+  "version": "1.0.0",
+  "description": "my node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/potatooBot/nodejs.git"
+  },
+  "author": "Keshav Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/potatooBot/nodejs/issues"
+  },
+  "homepage": "https://github.com/potatooBot/nodejs#readme",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "chalk": "^4.1.1",
+   
+    "validator": "^13.6.0"
+  }
+}
