@@ -40,12 +40,12 @@ const partialsPath =path.join(__dirname,"./partials");
 app.set("view engine", "hbs");
 app.set("views",templatePath);
 hbs.registerPartials(partialsPath);
-app.locals.title = 'My App'
-app.locals.email="kumarkeshav825@gmail.com";
+// app.locals.title = 'My App'
+// app.locals.email="kumarkeshav825@gmail.com";
 
-console.dir(app.locals.title);
-app.get("views");
-console.dir(app.locals.email);
+// console.dir(app.locals.title);
+// app.get("views");
+// console.dir(app.locals.email);
 // console.dir(app.locals.strftime);
 
 
@@ -58,6 +58,8 @@ app.get("", (req, res) => {
      myName : "Keshav",
   });
 });
+
+
 app.get("/contact", (req, res) => {
   res.render("contact",{
     myName : "Amit",
