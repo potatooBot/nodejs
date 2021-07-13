@@ -21,15 +21,47 @@ const playlistSchema = new mongoose.Schema({
     }
 })
 const Playlist = new mongoose.model("Playlist", playlistSchema);
-const data = new Playlist({
-    name : "Dadi",
+const document = async ()=>{
+try{
+
+
+    const myFirst = new Playlist({
+        name : "Keshav Kumar",
+        type : "Human",
+        age : 19,
+    alive : true,
+    })
+const mySecond = new Playlist({
+    name : "Aviral",
     type : "Human",
-    age : 60,
+    age : 19,
 alive : true,
 })
-data.save();
+const myFather = new Playlist({
+    name : "Binod Kumar",
+    type : "Human",
+    age : 51,
+alive : true,
+})
+const myMother = new Playlist({
+    name : "Rajni Gupta",
+    type : "Human",
+    age : 44,
+alive : true,
+})
+ const results= await Playlist.insertMany([myFirst, mySecond,myFather,myMother]);
+ console.log(results);
+}catch (e) {console.log(e);}
+}
+
+
+
+
+
 const app =express();
 app.get('/',(req,res) => {
     res.send(`<b>working </b>`);
 })
 app.listen(port);
+
+document();
