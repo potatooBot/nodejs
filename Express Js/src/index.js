@@ -56,14 +56,32 @@ app.use(express.static(staticPath));
 app.get("", (req, res) => {
   res.render("index",{ 
      myName : "Keshav",
+     page :"Home Page",
   });
 });
 
 
 app.get("/contact", (req, res) => {
+  console.log(req.query);
   res.render("contact",{
     myName : "Amit",
+    page : "Contact",
+    reqName : req.query.name,
+
   });
+})
+app.get("/contact/*",(req, res)=>{
+  res.render("error",{ 
+    errorComment : "Sorry this  about us does not exit :( ",
+
+  })
+})
+app.get("*",(req, res)=>{
+  res.render("error",{ 
+    errorComment : "Sorry this page does not exit :( ",
+
+
+  })
 })
 
 const port = 5500;
