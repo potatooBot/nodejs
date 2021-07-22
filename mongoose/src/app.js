@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const validator = require('validator');
 const port = 5500;
 mongoose.connect("mongodb://localhost:27017/keshavTesting", { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true})
 
@@ -22,6 +23,24 @@ const playlistSchema = new mongoose.Schema({
         }
     },
     alive: { type: Boolean},
+    email:{ 
+        type : String,
+        unique : true,
+        required :true,
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error("Not a Valid Email");
+            }
+        }
+    },
+    phone :{ 
+        type : String,
+        validate(value){
+            if(!validator.isMobilePhone(value,['en-IN'])){
+                throw new Error("Not a Valid Mobile");
+            }
+        }
+    },
     Date: {
         type: Date,
         default: Date.now(),
@@ -78,10 +97,12 @@ try{
 //     })
 
 const myTesting =new Playlist({
-    name : "Testing Name",
+    name : "Validator",
     age : 20,
     type :"Human",
     alive : true,
+    email:"kumarkeshav@gmail.in",
+    phone : "9875632544",
 })
 
 
@@ -92,6 +113,8 @@ const myTesting =new Playlist({
     
 
 }
+
+
 document();
 const getDocument = async () => {
     try {  
