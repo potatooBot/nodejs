@@ -55,7 +55,7 @@ router.patch("/students/:id", async(req, res)=>{
     try {
         const _id = req.params.id;
         const user = await Student.findByIdAndUpdate(_id,req.body,{new :true});
-        res.send(user);
+     
        
     } catch (error) {
         res.status(404).send(error);
