@@ -89,7 +89,21 @@ color : var(--main-color);
   box-shadow: var(--main-color);
   height :450px;
 filter :drop-shadow(0 0.5rem 1rem var(--main-color));
+}
+/*Error PAge Styling */
+.errimg img{
+  width: 50rem;
+  height:35rem;
+  border-radius: 30px;
+}
+.btnErr{
+  margin-top:0px;
+}
+@media (max-width:768px){
+.errimg img{
 
+ height :auto;
+}
 }
 .carousel{
   animation-name : effect;

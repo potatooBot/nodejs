@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5500;
 const path =require("path");
 const hbs = require("hbs");
 
@@ -23,14 +23,22 @@ app.get("", (req, res) => {
 });
 app.get("/about", (req, res) => {
   // res.send("about page");
-  res.render("about")
+  res.render("about",{
+    intro : "Welcome to my project ",
+    skill :"Competetive Coder"
+  })
 
 });
-app.get("/weather", (req, res) => {
-  res.render("weather");
+app.get("/weather", (req, res) => {  
+  res.render("weather",{
+  
+  });
 });
 app.get("*", (req, res) => {
-  res.send("404 Error Page");
+res.render('404error',{
+  errorMsg : 'Oops Page Not Found',
+
+});
 });
 
 app.listen(port, () => {
