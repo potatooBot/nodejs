@@ -85,6 +85,12 @@ color : var(--main-color);
     justify-content: center;
     align-items: flex-start;
 }
+.main_header_left figure img{
+  box-shadow: var(--main-color);
+  height :450px;
+filter :drop-shadow(0 0.5rem 1rem var(--main-color));
+
+}
 .carousel{
   animation-name : effect;
   animation-duration: 2s;
@@ -118,15 +124,17 @@ box-shadow: 0 8px 6px -6px #000;
 #btn:hover{transform: scale(1.1,1.1);
   box-shadow: 0 8px 6px -6px #0097e6 ;
 }
-
+.text-clr{
+  color: var(--main-color)
+}
 
 /*Footer Code*/
 footer{
   width :100%;
   background-color: var(--main-bg);
   margin: auto;
-  position :absolute;
-  bottom:0px;
+  position :fixed;
+  bottom:0;
 }
 footer p{
   margin: 0;

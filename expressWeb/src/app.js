@@ -5,20 +5,23 @@ const path =require("path");
 
 
 
+
 //public static path
 
 const staticPath =path.join(__dirname,"../public");
+app.set('view engine', 'hbs');
 app.use(express.static(staticPath));
 
 app.get("", (req, res) => {
-  res.send("working like charm Daang");
+  res.render('index');
 });
 app.get("/about", (req, res) => {
-  res.send("about page");
+  // res.send("about page");
+  res.render("about")
 
 });
 app.get("/weather", (req, res) => {
-  res.send("weather page");
+  res.render("weather");
 });
 app.get("*", (req, res) => {
   res.send("404 Error Page");
